@@ -1,0 +1,70 @@
+.page-footer-container {
+  background-color: #111113;
+  border-top: 1px solid #3c3c41;
+  width: 100%;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  margin-top: auto; 
+}
+
+.footer-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.api-title-text {
+  color: #c89b3c; /* Dorado */
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.route-list-display {
+  margin-bottom: 22px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Para que bajen de línea si la pantalla es pequeña */
+  gap: 14px;
+}
+
+.endpoint-chip {
+  padding: 6px 12px;
+  background-color: transparent;
+  border: 1px solid #3c3c41;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Colores específicos para cada método HTTP */
+.chip-get {
+  border-color: #0ac8b9; /* Cyan / Azul Hextech */
+  color: #0ac8b9;
+}
+
+.chip-post {
+  border-color: #c89b3c; /* Dorado */
+  color: #c89b3c;
+}
+
+.chip-put {
+  border-color: #4287f5; /* Azul vivo */
+  color: #4287f5;
+}
+
+.chip-delete {
+  border-color: #f54242; /* Rojo */
+  color: #f54242;
+}
+
+.legal-footer-text {
+  color: #7a7a7a;
+  font-size: 11px;
+  line-height: 1.6;
+  max-width: 680px;
+  margin: 0 auto;
+}

@@ -1,0 +1,71 @@
+<div class="transmission-hub-root">
+  
+  <header class="hub-header-panel">
+    <div class="header-inner-core">
+      <h2 class="hq-main-title">Enlace de <span class="gold-rune">Comunicaciones</span></h2>
+      <p class="hq-sub-text">
+        ¿Problemas con la API de campeones? ¿Dudas sobre los límites de peticiones? Contacta con el equipo de soporte técnico de <strong>Ojeda Games</strong>.
+      </p>
+    </div>
+  </header>
+
+  <div class="tactical-grid-layout">
+    
+    <section class="signal-form-container">
+      <h3 class="section-heading">Emitir Señal</h3>
+      
+      <form class="support-form-element">
+        <div class="input-cluster">
+          <label class="cluster-label" for="summonerName">Nombre de Invocador / Empresa</label>
+          <input type="text" id="summonerName" class="runic-input" placeholder="Ej: Faker#EUW">
+        </div>
+
+        <div class="input-cluster">
+          <label class="cluster-label" for="contactEmail">Correo de Enlace</label>
+          <input type="email" id="contactEmail" class="runic-input" placeholder="tu@correo.com">
+        </div>
+
+        <div class="input-cluster">
+          <label class="cluster-label" for="apiSubject">Asunto (Endpoint / Duda)</label>
+          <select id="apiSubject" class="runic-input select-mode">
+            <option value="auth">Problemas con API Key</option>
+            <option value="bug">Reportar un Bug en GET/POST</option>
+            <option value="business">Propuesta Comercial</option>
+            <option value="other">Otros</option>
+          </select>
+        </div>
+
+        <div class="input-cluster">
+          <label class="cluster-label" for="transmissionBody">Mensaje Cifrado</label>
+          <textarea id="transmissionBody" class="runic-input text-area-mode" rows="5" placeholder="Describe el problema con la base de datos..."></textarea>
+        </div>
+
+        <button type="button" class="btn-fire-signal">Enviar Transmisión</button>
+      </form>
+    </section>
+
+    <section class="base-intel-container">
+      <h3 class="section-heading">Cuartel General - Ojeda Games</h3>
+      
+      <div class="intel-details">
+        <p><strong>Ubicación Base:</strong> Alcalá de Guadaíra, Sevilla (Andalucía).</p>
+        <p><strong>Frecuencia de Soporte:</strong> support&#64;ojedagames.com</p>
+        <p><strong>Estado del Servidor:</strong> <span class="status-online">Operativo</span></p>
+      </div>
+
+      <div class="tactical-map-wrapper">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50744.17046033488!2d-5.88219985!3d37.3361596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126c0b39cb701b%3A0x6b77243574945413!2sAlcal%C3%A1%20de%20Guada%C3%ADra%2C%20Seville!5e0!3m2!1sen!2ses!4v1716900000000!5m2!1sen!2ses" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          class="google-map-frame">
+        </iframe>
+      </div>
+    </section>
+
+  </div>
+</div>
