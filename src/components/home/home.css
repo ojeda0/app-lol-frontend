@@ -1,4 +1,4 @@
-.storefront-root {
+.summoners-rift-layout {
   background-color: #0a0a0c; 
   color: #cdbe91; 
   font-family: 'Segoe UI', Roboto, sans-serif;
@@ -9,86 +9,15 @@
   gap: 40px;
 }
 
-/* Caja del Banner de la tienda */
-.storefront-hero {
-  background: linear-gradient(180deg, #111113 0%, #16161a 100%);
-  border: 1px solid #3c3c41;
-  border-left: 4px solid #c89b3c; 
-  padding: 48px 32px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
-}
-
-.hero-main-title {
-  font-size: 32px;
-  margin-top: 0;
-  margin-bottom: 16px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #f0e6d2; 
-}
-
-.gold-accent {
-  color: #c89b3c; 
-}
-
-.hero-description-text {
-  color: #a0a0a0;
-  font-size: 15px;
-  max-width: 750px;
-  line-height: 1.6;
-  margin-bottom: 32px;
-}
-
-/* Botonera Hextech */
-.storefront-buttons {
-  display: flex;
-  gap: 16px;
-}
-
-.btn-store-primary {
-  background-color: #c89b3c;
-  color: #111113;
-  border: 1px solid #c89b3c;
-  padding: 12px 24px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 12px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.btn-store-primary:hover {
-  background-color: #e0b354;
-}
-
-.btn-store-secondary {
-  background: transparent;
-  color: #c89b3c;
-  border: 1px solid #c89b3c;
-  padding: 12px 24px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 12px;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-
-.btn-store-secondary:hover {
-  background-color: rgba(200, 155, 60, 0.1);
-  color: #f0e6d2;
-}
-
-/* Contenedores de las Secciones */
-.showcase-block {
+/* Contenedores de Sección */
+.intel-display-block {
   background-color: #111113;
   border: 1px solid #3c3c41;
   padding: 30px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-.block-header {
+.block-top-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -97,13 +26,13 @@
   padding-bottom: 16px;
 }
 
-.block-header.no-border {
+.block-top-nav.no-line {
   border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-.block-title {
+.block-heading-txt {
   font-size: 18px;
   color: #f0e6d2;
   text-transform: uppercase;
@@ -111,8 +40,8 @@
   margin: 0;
 }
 
-/* Caja de Filtrado */
-.search-box-wrapper {
+/* Buscador */
+.search-container-box {
   width: 300px;
   display: flex;
   background-color: #1c1c1f;
@@ -120,7 +49,7 @@
   border-radius: 4px;
 }
 
-.search-field {
+.search-input-field {
   width: 100%;
   background: transparent;
   border: none;
@@ -130,32 +59,44 @@
   outline: none;
 }
 
-.search-field::placeholder {
+.search-input-field::placeholder {
   color: #6a6a70;
 }
 
-/* Grid del Catálogo */
-.champions-deck {
+/* Cuadrícula de la Galería */
+.hero-grid-system {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 20px;
 }
 
-.champion-mini-card {
+.hero-card-item {
   background-color: #0a0a0c;
   border: 1px solid #3c3c41;
   padding: 15px;
   text-align: center;
   transition: transform 0.2s ease, border-color 0.2s ease;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
-.champion-mini-card:hover {
+.hero-card-item:hover {
   transform: translateY(-4px);
   border-color: #c89b3c;
 }
 
-.card-media-fallback {
+.hero-pic-loaded {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  object-position: top center;
+  margin-bottom: 10px;
+  border: 1px solid #3c3c41;
+  background-color: #1c1c1f;
+}
+
+.hero-pic-empty {
   width: 100%;
   height: 120px;
   background-color: #1c1c1f;
@@ -168,22 +109,30 @@
   font-size: 11px;
 }
 
-.champion-title-name {
+.hero-lbl-name {
   color: #c89b3c;
   font-size: 14px;
   font-weight: 600;
   margin: 0 0 5px 0;
 }
 
-.champion-tag-role {
+.hero-lbl-class {
   color: #8a8a90;
   font-size: 11px;
   text-transform: uppercase;
   margin: 0;
 }
 
-/* Ajuste del botón añadir */
-.btn-icon-plus {
+/* Botón Añadir (+) */
+.btn-outline-cyan {
+  background: transparent;
+  border: 1px solid #0ac8b9;
+  color: #0ac8b9;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-add-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -191,50 +140,47 @@
   height: 35px;
   padding: 0;
   font-size: 18px;
-  border-color: #0ac8b9;
-  color: #0ac8b9;
 }
 
-.btn-icon-plus:hover {
+.btn-add-icon:hover {
   background-color: rgba(10, 200, 185, 0.1);
-  color: #0ac8b9;
 }
 
-/* Tabla CRUD */
-.crud-data-table {
+/* Tabla de Base de Datos */
+.mongo-data-table {
   margin-top: 24px;
   width: 100%;
   border-collapse: collapse;
   font-size: 13px;
 }
 
-.crud-data-table th,
-.crud-data-table td {
+.mongo-data-table th,
+.mongo-data-table td {
   text-align: left;
   padding: 12px 15px;
   border-bottom: 1px solid #3c3c41;
 }
 
-.crud-data-table th {
+.mongo-data-table th {
   color: #c89b3c;
   text-transform: uppercase;
   font-weight: 700;
 }
 
-.crud-data-table tr:last-child td {
+.mongo-data-table tr:last-child td {
   border-bottom: none;
 }
 
-.hex-id-cell {
+.id-hash-cell {
   color: #8a8a90;
   font-family: monospace;
 }
 
-.table-actions-header {
+.action-head-right {
   text-align: right;
 }
 
-.table-actions-cell {
+.action-cell-right {
   text-align: right;
   display: flex;
   gap: 8px;
@@ -242,7 +188,7 @@
 }
 
 /* Botones de acción de la tabla */
-.btn-action-trigger {
+.btn-db-action {
   background: transparent;
   border: 1px solid #c89b3c;
   color: #c89b3c;
@@ -256,20 +202,20 @@
   transition: all 0.2s ease-in-out;
 }
 
-.trigger-put {
+.action-modify {
   border-color: #4287f5;
   color: #4287f5;
 }
 
-.trigger-put:hover {
+.action-modify:hover {
   background-color: rgba(66, 135, 245, 0.1);
 }
 
-.trigger-delete {
+.action-erase {
   border-color: #f54242;
   color: #f54242;
 }
 
-.trigger-delete:hover {
+.action-erase:hover {
   background-color: rgba(245, 66, 66, 0.1);
 }

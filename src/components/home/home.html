@@ -1,96 +1,58 @@
-<div class="storefront-root">
+<div class="summoners-rift-layout">
   
-  <section class="storefront-hero">
-    <div class="hero-content-block">
-      <h2 class="hero-main-title">Galería y <span class="gold-accent">Arsenal de Héroes</span></h2>
-      <p class="hero-description-text">
-        Examina las estadísticas de los campeones disponibles, filtra la colección en tiempo real y gestiona las entradas de la base de datos NoSQL mediante operaciones CRUD directas.
-      </p>
-      <div class="storefront-buttons">
-        <button class="btn-store-primary">Explorar Tienda</button>
-        <button class="btn-store-secondary">Nuevo Registro</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="showcase-block">
-    <div class="block-header">
-      <h3 class="block-title">Catálogo de Personajes</h3>
-      <div class="search-box-wrapper">
-        <input type="text" class="search-field" placeholder="Filtrar por nombre...">
+  <section class="intel-display-block">
+    <div class="block-top-nav">
+      <h3 class="block-heading-txt">Inventario de Campeones</h3>
+      <div class="search-container-box">
+        <input type="text" class="search-input-field" placeholder="Filtrar colección...">
       </div>
     </div>
     
-    <div class="champions-deck">
-      <div class="champion-mini-card">
-        <div class="card-media-fallback">Muestra Visual</div>
-        <p class="champion-title-name">Aatrox</p>
-        <p class="champion-tag-role">Luchador</p>
-      </div>
-      
-      <div class="champion-mini-card">
-        <div class="card-media-fallback">Muestra Visual</div>
-        <p class="champion-title-name">Ahri</p>
-        <p class="champion-tag-role">Mago</p>
-      </div>
-      
-      <div class="champion-mini-card">
-        <div class="card-media-fallback">Muestra Visual</div>
-        <p class="champion-title-name">Akali</p>
-        <p class="champion-tag-role">Asesino</p>
-      </div>
-      
-      <div class="champion-mini-card">
-        <div class="card-media-fallback">Muestra Visual</div>
-        <p class="champion-title-name">Alistar</p>
-        <p class="champion-tag-role">Tanque</p>
-      </div>
+    <div class="hero-grid-system">
+      @for(hero of characters; track hero.id) {
+        <div class="hero-card-item">
+          
+          @if(hero.thumbnailUrl) {
+            <img [src]="hero.thumbnailUrl" [alt]="hero.name" class="hero-pic-loaded">
+          } @else {
+            <div class="hero-pic-empty">Sin Gráfico</div>
+          }
+          
+          <p class="hero-lbl-name">{{ hero.name }}</p>
+          <p class="hero-lbl-class">{{ hero.roles.join(', ') }}</p>
+          
+        </div>
+      }
     </div>
   </section>
 
-  <section class="showcase-block">
-    <div class="block-header no-border">
-      <h3 class="block-title">Consola de Operaciones (API)</h3>
-      <button class="btn-store-secondary btn-icon-plus">+</button>
+  <section class="intel-display-block">
+    <div class="block-top-nav no-line">
+      <h3 class="block-heading-txt">Terminal de Base de Datos</h3>
+      <button class="btn-outline-cyan btn-add-icon">+</button>
     </div>
 
-    <table class="crud-data-table">
+    <table class="mongo-data-table">
       <thead>
         <tr>
-          <th>Identificador ID</th>
-          <th>Nombre del Personaje</th>
-          <th>Rol Asignado</th>
-          <th class="table-actions-header">Acciones Disponibles</th>
+          <th>Identificador</th>
+          <th>Héroe</th>
+          <th>Clases</th>
+          <th class="action-head-right">Acciones</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="hex-id-cell">5f9a...00a1</td>
-          <td>Garen</td>
-          <td>Luchador</td>
-          <td class="table-actions-cell">
-            <button class="btn-action-trigger trigger-put">Modificar</button>
-            <button class="btn-action-trigger trigger-delete">Remover</button>
-          </td>
-        </tr>
-        <tr>
-          <td class="hex-id-cell">5f9a...00a2</td>
-          <td>Ashe</td>
-          <td>Tirador</td>
-          <td class="table-actions-cell">
-            <button class="btn-action-trigger trigger-put">Modificar</button>
-            <button class="btn-action-trigger trigger-delete">Remover</button>
-          </td>
-        </tr>
-        <tr>
-          <td class="hex-id-cell">5f9a...00a3</td>
-          <td>Lux</td>
-          <td>Mago</td>
-          <td class="table-actions-cell">
-            <button class="btn-action-trigger trigger-put">Modificar</button>
-            <button class="btn-action-trigger trigger-delete">Remover</button>
-          </td>
-        </tr>
+        @for(hero of characters; track hero.id) {
+          <tr>
+            <td class="id-hash-cell">{{ hero.id }}</td>
+            <td>{{ hero.name }}</td>
+            <td>{{ hero.roles.join(', ') }}</td>
+            <td class="action-cell-right">
+              <button class="btn-db-action action-modify">Editar</button>
+              <button class="btn-db-action action-erase">Borrar</button>
+            </td>
+          </tr>
+        }
       </tbody>
     </table>
   </section>
