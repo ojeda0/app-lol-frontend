@@ -19,11 +19,29 @@ export class Home implements OnInit{
   ){};
   
   ngOnInit(): void {
+
+    this._characterService.getCharacters().subscribe(result => {
+      this.characters = result;
+      
+    });
+
+    console.log(this.characters);
+
+  }
+
+  public loadAll(): void {
+
     this._characterService.getCharacters().subscribe(result => {
       this.characters = result;
     });
 
-    console.log(this.characters);
+  }
+
+  public filterByRoles(): void {
+
+    this._characterService.getCharacterByRoles().subscribe(result => {
+      this.characters = result;
+    });
 
   }
 

@@ -235,3 +235,25 @@
 .action-delete-mode:hover {
   background-color: rgba(245, 66, 66, 0.1);
 }
+
+.filter-controls {
+  display: flex;
+  gap: 10px;
+  margin-right: 20px;
+}
+
+.btn-filter {
+  background-color: transparent;
+  color: #cdbe91;
+  border: 1px solid #3c3c41;
+  padding: 5px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.btn-filter:hover {
+  border-color: #c89b3c;
+  color: #c89b3c;
+}

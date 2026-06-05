@@ -3,6 +3,12 @@
   <section class="content-panel-area">
     <div class="panel-header-layout">
       <h3 class="panel-title-text">Colección de Invocadores</h3>
+      
+      <div class="filter-controls">
+        <button type="button" class="btn-filter" (click)="filterByRoles()">Multi-Rol</button>
+        <button type="button" class="btn-filter" (click)="loadAll()">Todos</button>
+      </div>
+
       <div class="search-input-wrapper">
         <input type="text" class="search-text-field" placeholder="Buscar por alias...">
       </div>
