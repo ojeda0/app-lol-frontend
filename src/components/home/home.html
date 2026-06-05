@@ -1,55 +1,57 @@
-<div class="summoners-rift-layout">
+<div class="universe-dashboard-main">
   
-  <section class="intel-display-block">
-    <div class="block-top-nav">
-      <h3 class="block-heading-txt">Inventario de Campeones</h3>
-      <div class="search-container-box">
-        <input type="text" class="search-input-field" placeholder="Filtrar colección...">
+  <section class="content-panel-area">
+    <div class="panel-header-layout">
+      <h3 class="panel-title-text">Colección de Invocadores</h3>
+      <div class="search-input-wrapper">
+        <input type="text" class="search-text-field" placeholder="Buscar por alias...">
       </div>
     </div>
     
-    <div class="hero-grid-system">
-      @for(hero of characters; track hero.id) {
-        <div class="hero-card-item">
+    <div class="champions-display-grid">
+      @for(character of characters; track character.id) {
+        
+        <a href="/character/{{character.id}}" class="champion-clickable-card">
           
-          @if(hero.thumbnailUrl) {
-            <img [src]="hero.thumbnailUrl" [alt]="hero.name" class="hero-pic-loaded">
+          @if(character.thumbnailUrl) {
+            <img [src]="character.thumbnailUrl" [alt]="character.name" class="champ-avatar-loaded">
           } @else {
-            <div class="hero-pic-empty">Sin Gráfico</div>
+            <div class="champ-avatar-missing">Sin Gráfico</div>
           }
           
-          <p class="hero-lbl-name">{{ hero.name }}</p>
-          <p class="hero-lbl-class">{{ hero.roles.join(', ') }}</p>
+          <p class="champ-name-txt">{{ character.name }}</p>
+          <p class="champ-role-txt">{{ character.roles.join(', ') }}</p>
           
-        </div>
+        </a>
+        
       }
     </div>
   </section>
 
-  <section class="intel-display-block">
-    <div class="block-top-nav no-line">
-      <h3 class="block-heading-txt">Terminal de Base de Datos</h3>
-      <button class="btn-outline-cyan btn-add-icon">+</button>
+  <section class="content-panel-area">
+    <div class="panel-header-layout no-line-bottom">
+      <h3 class="panel-title-text">Registros del Servidor</h3>
+      <button class="btn-outline-teal icon-plus-btn">+</button>
     </div>
 
-    <table class="mongo-data-table">
+    <table class="records-data-table">
       <thead>
         <tr>
-          <th>Identificador</th>
-          <th>Héroe</th>
-          <th>Clases</th>
-          <th class="action-head-right">Acciones</th>
+          <th>Hash Identificador</th>
+          <th>Sujeto de Pruebas</th>
+          <th>Especialización</th>
+          <th class="table-actions-right">Ejecución</th>
         </tr>
       </thead>
       <tbody>
-        @for(hero of characters; track hero.id) {
+        @for(character of characters; track character.id) {
           <tr>
-            <td class="id-hash-cell">{{ hero.id }}</td>
-            <td>{{ hero.name }}</td>
-            <td>{{ hero.roles.join(', ') }}</td>
-            <td class="action-cell-right">
-              <button class="btn-db-action action-modify">Editar</button>
-              <button class="btn-db-action action-erase">Borrar</button>
+            <td class="mono-hash-cell">{{ character.id }}</td>
+            <td><a href="/character/{{character.id}}" class="table-nav-link">{{ character.name }}</a></td>
+            <td>{{ character.roles.join(', ') }}</td>
+            <td class="table-actions-cell">
+              <button class="btn-table-action action-edit-mode">Modificar</button>
+              <button class="btn-table-action action-delete-mode">Eliminar</button>
             </td>
           </tr>
         }

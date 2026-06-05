@@ -1,4 +1,4 @@
-.summoners-rift-layout {
+.universe-dashboard-main {
   background-color: #0a0a0c; 
   color: #cdbe91; 
   font-family: 'Segoe UI', Roboto, sans-serif;
@@ -9,15 +9,15 @@
   gap: 40px;
 }
 
-/* Contenedores de Sección */
-.intel-display-block {
+/* Paneles Contenedores */
+.content-panel-area {
   background-color: #111113;
   border: 1px solid #3c3c41;
   padding: 30px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-.block-top-nav {
+.panel-header-layout {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,13 +26,13 @@
   padding-bottom: 16px;
 }
 
-.block-top-nav.no-line {
+.panel-header-layout.no-line-bottom {
   border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-.block-heading-txt {
+.panel-title-text {
   font-size: 18px;
   color: #f0e6d2;
   text-transform: uppercase;
@@ -41,7 +41,7 @@
 }
 
 /* Buscador */
-.search-container-box {
+.search-input-wrapper {
   width: 300px;
   display: flex;
   background-color: #1c1c1f;
@@ -49,7 +49,7 @@
   border-radius: 4px;
 }
 
-.search-input-field {
+.search-text-field {
   width: 100%;
   background: transparent;
   border: none;
@@ -59,34 +59,37 @@
   outline: none;
 }
 
-.search-input-field::placeholder {
+.search-text-field::placeholder {
   color: #6a6a70;
 }
 
-/* Cuadrícula de la Galería */
-.hero-grid-system {
+/* Cuadrícula / Grid */
+.champions-display-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 20px;
 }
 
-.hero-card-item {
+/* Tarjeta Enlace */
+.champion-clickable-card {
   background-color: #0a0a0c;
   border: 1px solid #3c3c41;
   padding: 15px;
   text-align: center;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
   display: flex;
   flex-direction: column;
 }
 
-.hero-card-item:hover {
+.champion-clickable-card:hover {
   transform: translateY(-4px);
   border-color: #c89b3c;
+  box-shadow: 0 4px 15px rgba(200, 155, 60, 0.15);
 }
 
-.hero-pic-loaded {
+.champ-avatar-loaded {
   width: 100%;
   height: 120px;
   object-fit: cover;
@@ -96,7 +99,7 @@
   background-color: #1c1c1f;
 }
 
-.hero-pic-empty {
+.champ-avatar-missing {
   width: 100%;
   height: 120px;
   background-color: #1c1c1f;
@@ -109,22 +112,22 @@
   font-size: 11px;
 }
 
-.hero-lbl-name {
+.champ-name-txt {
   color: #c89b3c;
   font-size: 14px;
   font-weight: 600;
   margin: 0 0 5px 0;
 }
 
-.hero-lbl-class {
+.champ-role-txt {
   color: #8a8a90;
   font-size: 11px;
   text-transform: uppercase;
   margin: 0;
 }
 
-/* Botón Añadir (+) */
-.btn-outline-cyan {
+/* Botón Añadir Tabla (+) */
+.btn-outline-teal {
   background: transparent;
   border: 1px solid #0ac8b9;
   color: #0ac8b9;
@@ -132,7 +135,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-.btn-add-icon {
+.icon-plus-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,45 +145,58 @@
   font-size: 18px;
 }
 
-.btn-add-icon:hover {
+.icon-plus-btn:hover {
   background-color: rgba(10, 200, 185, 0.1);
 }
 
-/* Tabla de Base de Datos */
-.mongo-data-table {
+/* Tabla de Datos */
+.records-data-table {
   margin-top: 24px;
   width: 100%;
   border-collapse: collapse;
   font-size: 13px;
 }
 
-.mongo-data-table th,
-.mongo-data-table td {
+.records-data-table th,
+.records-data-table td {
   text-align: left;
   padding: 12px 15px;
   border-bottom: 1px solid #3c3c41;
 }
 
-.mongo-data-table th {
+.records-data-table th {
   color: #c89b3c;
   text-transform: uppercase;
   font-weight: 700;
 }
 
-.mongo-data-table tr:last-child td {
+.records-data-table tr:last-child td {
   border-bottom: none;
 }
 
-.id-hash-cell {
+.mono-hash-cell {
   color: #8a8a90;
   font-family: monospace;
 }
 
-.action-head-right {
+/* Enlace de la tabla */
+.table-nav-link {
+  color: #cdbe91;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.table-nav-link:hover {
+  color: #c89b3c;
+  text-decoration: underline;
+}
+
+.table-actions-right {
   text-align: right;
 }
 
-.action-cell-right {
+.table-actions-cell {
   text-align: right;
   display: flex;
   gap: 8px;
@@ -188,7 +204,7 @@
 }
 
 /* Botones de acción de la tabla */
-.btn-db-action {
+.btn-table-action {
   background: transparent;
   border: 1px solid #c89b3c;
   color: #c89b3c;
@@ -202,20 +218,20 @@
   transition: all 0.2s ease-in-out;
 }
 
-.action-modify {
+.action-edit-mode {
   border-color: #4287f5;
   color: #4287f5;
 }
 
-.action-modify:hover {
+.action-edit-mode:hover {
   background-color: rgba(66, 135, 245, 0.1);
 }
 
-.action-erase {
+.action-delete-mode {
   border-color: #f54242;
   color: #f54242;
 }
 
-.action-erase:hover {
+.action-delete-mode:hover {
   background-color: rgba(245, 66, 66, 0.1);
 }

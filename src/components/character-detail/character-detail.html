@@ -1,0 +1,49 @@
+<div class="champion-insight-view">
+  
+  <div class="insight-nav-ribbon">
+    <h2 class="insight-header-text">Biografía del <span class="accent-gold-shade">Combatiente</span></h2>
+    <a href="/inicio" class="btn-return-action">Cerrar Biografía</a>
+  </div>
+
+  @if(character) {
+    <section class="insight-content-block">
+      
+      <div class="insight-visual-area">
+        @if(character.thumbnailUrl) {
+          <img [src]="character.thumbnailUrl" [alt]="character.name" class="visual-portrait-img">
+        } @else {
+          <div class="visual-portrait-none">Retrato Indisponible</div>
+        }
+      </div>
+
+      <div class="insight-data-area">
+        <div class="data-record-item">
+          <span class="record-tag-mini">Nombre del Entidad</span>
+          <h1 class="record-value-title">{{ character.name }}</h1>
+        </div>
+
+        <div class="data-record-item">
+          <span class="record-tag-mini">Clases Asignadas</span>
+          <p class="record-value-standard">{{ character.roles.join(', ') }}</p>
+        </div>
+
+        <div class="data-record-item">
+          <span class="record-tag-mini">Sobrenombre Táctico</span>
+          <p class="record-value-standard">{{ character.title }}</p>
+        </div>
+
+        <div class="data-record-item">
+          <span class="record-tag-mini">Identificador Base de Datos</span>
+          <p class="record-value-system">{{ id }}</p>
+        </div>
+      </div>
+
+    </section>
+  } 
+  @else {
+    <div class="insight-loading-status">
+      Estableciendo conexión con el servidor REST...
+    </div>
+  }
+
+</div>

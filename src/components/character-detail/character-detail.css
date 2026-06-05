@@ -1,0 +1,154 @@
+.champion-insight-view {
+  background-color: #0a0a0c;
+  color: #cdbe91;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  padding: 40px 24px;
+  min-height: calc(100vh - 160px);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Cinta superior de navegación */
+.insight-nav-ribbon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #3c3c41;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.insight-header-text {
+  font-size: 26px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #f0e6d2;
+}
+
+.accent-gold-shade {
+  color: #c89b3c;
+}
+
+.btn-return-action {
+  background: transparent;
+  border: 1px solid #0ac8b9;
+  color: #0ac8b9;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.btn-return-action:hover {
+  background-color: rgba(10, 200, 185, 0.15);
+  box-shadow: 0 0 10px rgba(10, 200, 185, 0.4);
+}
+
+/* Mensaje mientras cargan los datos */
+.insight-loading-status {
+  text-align: center;
+  padding: 50px;
+  font-size: 18px;
+  color: #8a8a90;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Bloque central del perfil */
+.insight-content-block {
+  background: linear-gradient(135deg, #111113 0%, #1a1a24 100%);
+  border: 1px solid #3c3c41;
+  border-left: 4px solid #c89b3c;
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* Diseño responsivo para tablets/móviles */
+@media (max-width: 768px) {
+  .insight-content-block {
+    flex-direction: column;
+  }
+}
+
+/* Área visual (Izquierda) */
+.insight-visual-area {
+  flex: 0 0 300px;
+}
+
+.visual-portrait-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 2px solid #3c3c41;
+  background-color: #1c1c1f;
+}
+
+.visual-portrait-none {
+  width: 100%;
+  height: 400px;
+  background-color: #0a0a0c;
+  border: 2px solid #3c3c41;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4a4a50;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Área de datos (Derecha) */
+.insight-data-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+}
+
+.data-record-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.record-tag-mini {
+  font-size: 11px;
+  color: #8a8a90;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.record-value-title {
+  font-size: 38px;
+  color: #c89b3c;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+
+.record-value-standard {
+  font-size: 18px;
+  color: #f0e6d2;
+  margin: 0;
+}
+
+.record-value-system {
+  font-size: 14px;
+  color: #0ac8b9;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  background-color: #0a0a0c;
+  padding: 8px 12px;
+  border: 1px solid #3c3c41;
+  display: inline-block;
+  align-self: flex-start;
+}
