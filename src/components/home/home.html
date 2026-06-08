@@ -4,11 +4,6 @@
     <div class="panel-header-layout">
       <h3 class="panel-title-text">Colección de Invocadores</h3>
       
-      <div class="filter-controls">
-        <button type="button" class="btn-filter" (click)="filterByRoles()">Multi-Rol</button>
-        <button type="button" class="btn-filter" (click)="loadAll()">Todos</button>
-      </div>
-
       <div class="search-input-wrapper">
         <input type="text" class="search-text-field" placeholder="Buscar por alias...">
       </div>
@@ -16,7 +11,6 @@
     
     <div class="champions-display-grid">
       @for(character of characters; track character.id) {
-        
         <a href="/character/{{character.id}}" class="champion-clickable-card">
           
           @if(character.thumbnailUrl) {
@@ -27,9 +21,7 @@
           
           <p class="champ-name-txt">{{ character.name }}</p>
           <p class="champ-role-txt">{{ character.roles.join(', ') }}</p>
-          
         </a>
-        
       }
     </div>
   </section>
@@ -37,7 +29,7 @@
   <section class="content-panel-area">
     <div class="panel-header-layout no-line-bottom">
       <h3 class="panel-title-text">Registros del Servidor</h3>
-      <button class="btn-outline-teal icon-plus-btn">+</button>
+      <button type="button" class="btn-outline-teal icon-plus-btn">+</button>
     </div>
 
     <table class="records-data-table">
@@ -56,8 +48,8 @@
             <td><a href="/character/{{character.id}}" class="table-nav-link">{{ character.name }}</a></td>
             <td>{{ character.roles.join(', ') }}</td>
             <td class="table-actions-cell">
-              <button class="btn-table-action action-edit-mode">Modificar</button>
-              <button class="btn-table-action action-delete-mode">Eliminar</button>
+              <button type="button" class="btn-table-action action-edit-mode">Modificar</button>
+              <button type="button" class="btn-table-action action-delete-mode">Eliminar</button>
             </td>
           </tr>
         }

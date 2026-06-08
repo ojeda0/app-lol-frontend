@@ -9,10 +9,13 @@
     <nav class="main-nav-menu">
       <ul class="nav-link-collection">
         <li>
-          <a href="/inicio">Inicio</a>
+          <a (click)="filterByRoles()" style="cursor: pointer;">MULTIROL</a>
         </li>
         <li>
-          <a href="/contacto">Contacto</a>
+          <a (click)="loadAll()" style="cursor: pointer;">INICIO</a>
+        </li>
+        <li>
+          <a href="/contacto">CONTACTO</a>
         </li>
       </ul>
     </nav>

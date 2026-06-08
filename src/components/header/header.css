@@ -65,3 +65,44 @@
   color: #f0e6d2;
   text-shadow: 0 0 8px rgba(200, 155, 60, 0.3);
 }
+
+.header-controls-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.header-action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-filter {
+  background-color: transparent;
+  color: #cdbe91;
+  border: 1px solid #3c3c41;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.btn-filter:hover {
+  border-color: #c89b3c;
+  color: #f0e6d2;
+  background-color: rgba(200, 155, 60, 0.15);
+  box-shadow: 0 0 8px rgba(200, 155, 60, 0.2);
+}
+
+.nav-link-collection {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
