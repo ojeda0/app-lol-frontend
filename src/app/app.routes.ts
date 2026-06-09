@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { Home } from '../components/home/home';
 import { Contact } from '../components/contact/contact';
 import { CharacterDetail } from '../components/character-detail/character-detail';
+import { Footer } from '../components/footer/footer';
+import { CharacterTank } from '../components/character-tank/character-tank';
 
 export const routes: Routes = [
 
@@ -9,6 +11,7 @@ export const routes: Routes = [
     {path:'inicio', component: Home},
     {path:'contacto', component: Contact},
     {path: 'character/:id', component: CharacterDetail},
-    {path: 'filtro/multirol', component: Home}
+    {path: 'filtro/multirol', component: Home},
+    {path: 'tanques', component: CharacterTank}
 
 ];

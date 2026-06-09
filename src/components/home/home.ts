@@ -9,33 +9,36 @@ import { Location } from '@angular/common';
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home implements OnInit{
+export class Home implements OnInit {
 
   public characters: Character[] = [];
 
   constructor(
     private _characterService: CharacterService,
     private _location: Location
-  ){};
+  ) {}
   
   ngOnInit(): void {
-    this._characterService.characterPuente$.subscribe(result => {
-      this.characters = result;
-    });
-
+    // Evaluamos la ruta y lanzamos directamente el método correspondiente
     if (this._location.path() === '/filtro/multirol') {
-      this._characterService.getCharacterByRoles();
+      this.filterByRoles();
     } else {
-      this._characterService.getCharacters();
+      this.loadAll();
     }
   }
 
   public loadAll(): void {
-    this._characterService.getCharacters();
+    // Nos suscribimos directamente al flujo de datos del servicio
+    this._characterService.getCharacters().subscribe((result: Character[]) => {
+      this.characters = result;
+    });
   }
 
   public filterByRoles(): void {
-    this._characterService.getCharacterByRoles();
+    // Nos suscribimos directamente al flujo de datos filtrado
+    this._characterService.getCharacterByRoles().subscribe((result: Character[]) => {
+      this.characters = result;
+    });
   }
 
 }
