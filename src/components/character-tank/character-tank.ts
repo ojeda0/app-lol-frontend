@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Character } from '../../model/character';
 import { CharacterService } from '../../services/character-service';
 
@@ -8,7 +8,7 @@ import { CharacterService } from '../../services/character-service';
   templateUrl: './character-tank.html',
   styleUrl: './character-tank.css',
 })
-export class CharacterTank {
+export class CharacterTank implements OnInit {
 
   public characters: Character[] = [];
 

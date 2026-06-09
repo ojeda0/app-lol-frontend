@@ -61,6 +61,38 @@
   color: #f54242;
 }
 
+/* Estilos de la nueva zona del botón */
+.vanguard-btn-wrapper {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-heavy-vanguard {
+  background-color: transparent;
+  color: #c89b3c;
+  border: 1px solid #c89b3c;
+  padding: 10px 24px;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-heavy-vanguard:hover {
+  background-color: rgba(200, 155, 60, 0.15);
+  box-shadow: 0 0 10px rgba(200, 155, 60, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-heavy-vanguard:active {
+  transform: translateY(0);
+}
+
 .legal-footer-text {
   color: #7a7a7a;
   font-size: 11px;

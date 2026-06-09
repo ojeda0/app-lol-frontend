@@ -1,1 +1,60 @@
-<p>character-tank works!</p>
+<div class="tank-dashboard-wrapper">
+  
+  <section class="tank-panel-section">
+    <div class="tank-header-flex">
+      <h3 class="tank-title-heading">División de Vanguardia Pesada</h3>
+      
+      <div class="tank-search-box">
+        <input type="text" class="tank-input-field" placeholder="Localizar muro defensivo...">
+      </div>
+    </div>
+    
+    <div class="tank-roster-grid">
+      @for(character of characters; track character.id) {
+        <a href="/character/{{character.id}}" class="tank-card-link">
+          
+          @if(character.thumbnailUrl) {
+            <img [src]="character.thumbnailUrl" [alt]="character.name" class="tank-img-loaded">
+          } @else {
+            <div class="tank-img-missing">Sin Gráfico</div>
+          }
+          
+          <p class="tank-name-label">{{ character.name }}</p>
+          <p class="tank-role-label">{{ character.roles.join(', ') }}</p>
+        </a>
+      }
+    </div>
+  </section>
+
+  <section class="tank-panel-section">
+    <div class="tank-header-flex no-line-bottom">
+      <h3 class="tank-title-heading">Registros de Resistencia</h3>
+      <button type="button" class="tank-btn-outline tank-icon-add">+</button>
+    </div>
+
+    <table class="tank-records-table">
+      <thead>
+        <tr>
+          <th>Código Interno</th>
+          <th>Nombre en Clave</th>
+          <th>Categoría</th>
+          <th class="tank-align-right">Maniobras</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(character of characters; track character.id) {
+          <tr>
+            <td class="tank-hash-col">{{ character.id }}</td>
+            <td><a href="/character/{{character.id}}" class="tank-table-link">{{ character.name }}</a></td>
+            <td>{{ character.roles.join(', ') }}</td>
+            <td class="tank-action-group">
+              <button type="button" class="tank-btn-action tank-edit-mode">Ajustar</button>
+              <button type="button" class="tank-btn-action tank-delete-mode">Purgar</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </section>
+
+</div>

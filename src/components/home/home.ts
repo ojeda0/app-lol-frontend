@@ -19,7 +19,6 @@ export class Home implements OnInit {
   ) {}
   
   ngOnInit(): void {
-    // Evaluamos la ruta y lanzamos directamente el método correspondiente
     if (this._location.path() === '/filtro/multirol') {
       this.filterByRoles();
     } else {
@@ -28,14 +27,12 @@ export class Home implements OnInit {
   }
 
   public loadAll(): void {
-    // Nos suscribimos directamente al flujo de datos del servicio
     this._characterService.getCharacters().subscribe((result: Character[]) => {
       this.characters = result;
     });
   }
 
   public filterByRoles(): void {
-    // Nos suscribimos directamente al flujo de datos filtrado
     this._characterService.getCharacterByRoles().subscribe((result: Character[]) => {
       this.characters = result;
     });
